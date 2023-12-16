@@ -1,0 +1,32 @@
+<?php
+
+/// 1. Create function for accepting the color as a string 
+/// 2. Create an array resistor colors with their relative numeric code
+/// 3. Return a numeric code based on the color's name
+$colors = [
+    "black" => 0,
+    "brown" => 1,
+    "red" => 2,
+    "orange" => 3,
+    "yellow" => 4,
+    "green" => 5,
+    "blue" => 6,
+    "violet" => 7,
+    "grey" => 8,
+    "white" => 9
+];
+
+function colorCode(string $color)
+{
+    global $colors;
+
+    if (array_key_exists($color, $colors)) {
+        return $colors[$color];
+    } else {
+        return "Not Found";
+    }
+}
+
+$selected_color = "black";
+
+echo colorCode($selected_color);
